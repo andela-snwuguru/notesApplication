@@ -1,9 +1,9 @@
 class NotesApplication
 
-	def initialize author
-		@author = author
-		@notes = []
-	end
+  def initialize author
+    @author = author
+    @notes = []
+  end
 
 	def create note_content
 		return nil if note_content.length == 0
