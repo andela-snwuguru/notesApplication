@@ -8,12 +8,19 @@ module BootCamp
       start_note_app
     end
 
-    def print_line
-      puts '---------------------------------------------------------------------------------'
+    def print_line total = 1
+      while total > 0
+        puts '---------------------------------------------------------------------------------'
+        total -= 1
+      end
     end
 
-    def print_line_space
-      puts '---------------------                                    ------------------------'
+    def print_line_space total = 1
+      while total > 0
+        puts '---------------------                                    ------------------------'
+        total -= 1
+      end
+      
     end
 
     def print_text_space text
@@ -21,17 +28,11 @@ module BootCamp
     end
 
     def welcome
-       print_line
-       print_line
-       print_line
-       print_line_space
-       print_line_space
+       print_line 3
+       print_line_space 2
        print_text_space 'RUBY NOTE APPLICATION'
-       print_line_space
-       print_line_space
-       print_line
-       print_line
-       print_line
+       print_line_space 2
+       print_line 3
        puts "			Follow the prompts to use application"
        print_line
     end
@@ -47,8 +48,7 @@ module BootCamp
       puts "get     -   view an existing note"
       puts "help	  -  Show instruction/process commands"
       puts "quit	  -  Quit application"
-      print_line
-      print_line
+      print_line 2
     end
 
     def start_note_app
@@ -74,14 +74,11 @@ module BootCamp
     end
 
     def request_process
-      print_line
-      print_line
+      print_line 2
       print_text_space "welcome #{@author}"
       print_line
       instruction
-
-
-      while true
+      while 1 == 1
         print_line
         puts "Enter a process command:"
         command = gets.chomp.downcase
@@ -112,10 +109,8 @@ module BootCamp
     end
 
     def request_create
-      print_line
-      print_line
-
-      while true
+      print_line 2
+      while 1 == 1
         puts "Enter note content:"
         note_content = gets.chomp
         if note_content.length == 0
@@ -130,18 +125,15 @@ module BootCamp
     end
 
     def request_list
-      print_line
-      print_line
+      print_line 2
       print_text_space 'ALL NOTES'
-      print_line
-      print_line
+      print_line 2
       @app.list
       print_line
     end
 
     def request_search
       print_line
-
       while true
         puts "Enter Search Text:"
         search_text = gets.chomp
@@ -161,7 +153,7 @@ module BootCamp
       print_line
       return puts 'Note is empty' if @app.get_notes.length == 0
 
-      while true
+      while 1 == 1
         request_list
         puts "Enter Note ID from the list above:"
         note_id = gets.chomp
@@ -170,7 +162,7 @@ module BootCamp
           print_line
         else
           print_line
-          while true
+          while 1 == 1
             puts "Enter note content:"
             note_content = gets.chomp
             if note_content.length == 0
@@ -193,8 +185,7 @@ module BootCamp
     def request_get
       print_line
       return puts 'Note is empty' if @app.get_notes.length == 0
-
-      while true
+      while 1 == 1
         request_list
         puts "Enter Note ID from the list above:"
         note_id = gets.chomp
@@ -215,8 +206,7 @@ module BootCamp
     def request_delete 
       print_line
       return puts 'Note is empty' if @app.get_notes.length == 0
-
-      while true
+      while 1 == 1
         request_list
         puts "Enter Note ID from the list above:"
         note_id = gets.chomp
@@ -233,7 +223,6 @@ module BootCamp
           puts 'Invalid Note ID'
         end
         print_line
-
       end
     end
   end
