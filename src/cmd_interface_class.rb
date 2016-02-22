@@ -44,6 +44,7 @@ module BootCamp
       puts "edit	  -  Edit existing note"
       puts "delete  -  Delete existing note"
       puts "search  -  Search existing note"
+      puts "get     -   view an existing note"
       puts "help	  -  Show instruction/process commands"
       puts "quit	  -  Quit application"
       print_line
@@ -97,6 +98,8 @@ module BootCamp
             request_delete
           when 'help'
             instruction
+          when 'get'
+            request_get
           when 'quit'
             break
           else
@@ -182,6 +185,28 @@ module BootCamp
               break
             end
           end
+        end
+        break
+      end
+    end 
+
+    def request_get
+      print_line
+      return puts 'Note is empty' if @app.get_notes.length == 0
+
+      while true
+        request_list
+        puts "Enter Note ID from the list above:"
+        note_id = gets.chomp
+        if note_id.length == 0
+          puts "Note ID is required"
+          print_line
+        else
+          print_line
+          note = @app.get note_id.to_i
+          @app.print note
+          print_line
+          break
         end
         break
       end
