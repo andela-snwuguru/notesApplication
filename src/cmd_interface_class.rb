@@ -1,6 +1,7 @@
 require_relative 'notes_application_class.rb'
 
 module BootCamp
+  TRUE  = true
   class CommanLineInterface
 
     def initialize
@@ -78,7 +79,13 @@ module BootCamp
       print_text_space "welcome #{@author}"
       print_line
       instruction
-      while 1 == 1
+      process_listener
+      puts "Thank you for using note application"
+      print_line
+    end
+
+    def process_listener
+      while TRUE
         print_line
         puts "Enter a process command:"
         command = gets.chomp.downcase
@@ -104,13 +111,11 @@ module BootCamp
             instruction
         end
       end
-      puts "Thank you for using note application"
-      print_line
     end
 
     def request_create
       print_line 2
-      while 1 == 1
+      while TRUE
         puts "Enter note content:"
         note_content = gets.chomp
         if note_content.length == 0
@@ -134,7 +139,7 @@ module BootCamp
 
     def request_search
       print_line
-      while true
+      while TRUE
         puts "Enter Search Text:"
         search_text = gets.chomp
         if search_text.length == 0
@@ -153,7 +158,7 @@ module BootCamp
       print_line
       return puts 'Note is empty' if @app.get_notes.length == 0
 
-      while 1 == 1
+      while TRUE
         request_list
         puts "Enter Note ID from the list above:"
         note_id = gets.chomp
@@ -162,7 +167,7 @@ module BootCamp
           print_line
         else
           print_line
-          while 1 == 1
+          while TRUE
             puts "Enter note content:"
             note_content = gets.chomp
             if note_content.length == 0
@@ -171,8 +176,11 @@ module BootCamp
             else
               print_line
               result = @app.edit note_id.to_i,note_content
-              puts "Note ID: #{note_id} successfully updated" if result
-              puts "Note ID: #{note_id} is invalid" if !result
+              if result
+                puts "Note ID: #{note_id} successfully updated"
+              else
+                puts "Note ID: #{note_id} is invalid"
+              end
               print_line
               break
             end
@@ -185,7 +193,7 @@ module BootCamp
     def request_get
       print_line
       return puts 'Note is empty' if @app.get_notes.length == 0
-      while 1 == 1
+      while TRUE
         request_list
         puts "Enter Note ID from the list above:"
         note_id = gets.chomp
@@ -206,7 +214,7 @@ module BootCamp
     def request_delete 
       print_line
       return puts 'Note is empty' if @app.get_notes.length == 0
-      while 1 == 1
+      while TRUE
         request_list
         puts "Enter Note ID from the list above:"
         note_id = gets.chomp
@@ -216,15 +224,15 @@ module BootCamp
         else
           print_line
           result = @app.delete note_id.to_i
-        if result.is_a? Hash
-          puts "Note ID:#{note_id} successfully deleted" 
-          break
-        else
-          puts 'Invalid Note ID'
+          if result.is_a? Hash
+            puts "Note ID:#{note_id} successfully deleted" 
+            break
+          else
+            puts 'Invalid Note ID'
+          end
+          print_line
         end
-        print_line
       end
     end
-  end
   end
 end
