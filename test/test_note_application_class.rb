@@ -1,4 +1,4 @@
-require_relative 'notes_application_class.rb'
+require_relative '../src/notes_application_class.rb'
 
 RSpec.describe "NotesApplication" do
 
