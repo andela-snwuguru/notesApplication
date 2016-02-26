@@ -7,6 +7,7 @@ CodeClimate::TestReporter.configure do |config|
 end
 
 CodeClimate::TestReporter.start
+
 RSpec.describe "NotesApplication" do
 
   describe "Case for create method" do
