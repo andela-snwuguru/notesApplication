@@ -1,4 +1,3 @@
-script: bundle exec rspec spec test/test_note_application_class.rb
 language: ruby
 rvm:
 addons:
