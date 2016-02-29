@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 script: bundle exec rspec test
+=======
+>>>>>>> master
 language: ruby
 rvm:
   - 2.2.4
