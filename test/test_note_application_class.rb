@@ -1,6 +1,5 @@
 require_relative '../src/notes_application_class.rb'
-require "codeclimate-test-reporter" 
-CodeClimate::TestReporter.start
+require "spec_helper" 
 
 RSpec.describe "NotesApplication" do
 
