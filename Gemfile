@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
-ruby "2.2.4"
+ruby "1.9.3"
 gem "codeclimate-test-reporter", group: :test, require: nil
 gem "rspec"
