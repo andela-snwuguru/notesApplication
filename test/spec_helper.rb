@@ -104,3 +104,5 @@ RSpec.configure do |config|
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
 end
+
+require_relative "test_note_application_class.rb" 

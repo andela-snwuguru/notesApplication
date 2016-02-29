@@ -1,5 +1,4 @@
 require_relative '../src/notes_application_class.rb'
-require_relative "spec_helper" 
 
 RSpec.describe "NotesApplication" do
 
