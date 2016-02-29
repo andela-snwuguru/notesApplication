@@ -1,4 +1,4 @@
-script: bundle exec rspec test
+script: bundle exec rspec test/test_note_application_class.rb
 language: ruby
 addons:
     code_climate:
