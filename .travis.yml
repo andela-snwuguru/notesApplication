@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+script: bundle exec rspec test
+=======
+>>>>>>> master
 language: ruby
 rvm:
+  - 2.2.4
 addons:
-  code_climate:
-      repo_token: b96250a8f94fb91fb7e39504b18f80d37e813da75f67f41bb9c688d2f11a3462
+    code_climate:
+        repo_token: b96250a8f94fb91fb7e39504b18f80d37e813da75f67f41bb9c688d2f11a3462

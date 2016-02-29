@@ -1,0 +1,21 @@
+engines:
+duplication:
+    enabled: true
+    checks:
+      Similar code:
+        enabled: false
+  rubocop:
+    enabled: true
+  golint:
+    enabled: false
+  eslint:
+    enabled: false
+  csslint:
+    enabled: false
+ratings:
+  paths:
+  - src/**
+  - "**.rb"
+  - "**.go"
+exclude_paths:
+- test/**/*
